@@ -62,6 +62,17 @@ function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+  let result = [];
+  array.forEach(e => {
+    if (!result.includes(e)) result.push(e) 
+  });
+  return cb(result);
 }
+
+const dubArray = [22,33,22,11,22,33,11,22,44,33,55];
+removeDuplicates(dubArray,callback);
+
+// PROOF OF PURITY
+console.log(dubArray);
 
 
